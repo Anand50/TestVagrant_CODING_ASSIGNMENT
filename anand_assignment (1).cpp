@@ -10,8 +10,8 @@ class Team{
 			this->name = name;
 			this->result = result;
 			points = 0;
-			for(auto i:result){
-				points += 2*(i==1);
+			for(int i=0;i<result.size();i++){
+				points += 2*result[i];
 			}
 		}
 		int get_points(){
@@ -31,10 +31,10 @@ vector<Team* > team_with_consecutive_result(vector<Team> &points_table,int conse
 		cout<<"Have details of only last 5 matches. Enter the value less than or equal to 5";
 		return ans;
 	}
-	for(int i=0;i<size(points_table);i++){
+	for(int i=0;i<points_table.size();i++){
 		bool curr_team = false;
 		vector<int> result = points_table[i].get_result();
-		for(int j=0;j+consecutive-1<size(result);j++){
+		for(int j=0;j+consecutive-1<result.size();j++){
 			bool from_this_index = false;
 			int k = 0;
 			for(k=0;k<consecutive;k++){
@@ -58,10 +58,10 @@ vector<Team* > team_with_consecutive_result(vector<Team> &points_table,int conse
 double average_points(vector<Team*> &v){
 	// returns the average points of filtered teams
 	double total = 0;
-	for(auto &it:v){
-		total += it->get_points();
+	for(auto it=0;it<v.size();it++){
+		total += v[it]->get_points();
 	}
-	return total/size(v);
+	return total/v.size();
 }
 
 int main(){
