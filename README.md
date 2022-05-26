@@ -1,5 +1,5 @@
 # TestVagrant_CODING_ASSIGNMENT
- REQUIREMENTS-C++17
+ REQUIREMENTS-Version C++ 14 and above
 
 i) team_with_consecutive_result
 
